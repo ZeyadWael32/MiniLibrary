@@ -8,7 +8,7 @@ namespace MiniLibrary.DataAccess.FluentConfig
     {
         public void Configure(EntityTypeBuilder<Category> modelBuilder)
         {
-            modelBuilder.Property(u => u.Name).HasMaxLength(50).IsRequired();
+            modelBuilder.Property(category => category.Name).HasMaxLength(50).IsRequired();
         }
     }
 }

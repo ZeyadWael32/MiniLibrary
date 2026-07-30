@@ -8,14 +8,14 @@ namespace MiniLibrary.DataAccess.FluentConfig
     {
         public void Configure(EntityTypeBuilder<Book> modelBuilder)
         {
-            modelBuilder.Property(u => u.Title).HasMaxLength(100).IsRequired();
-            modelBuilder.Property(u => u.ISBN).HasMaxLength(20).IsRequired();
-            modelBuilder.Property(u => u.Price).HasPrecision(10, 2);
-            modelBuilder.Property(u => u.Description).HasMaxLength(500).IsRequired(false);
+            modelBuilder.Property(book => book.Title).HasMaxLength(100).IsRequired();
+            modelBuilder.Property(book => book.ISBN).HasMaxLength(20).IsRequired();
+            modelBuilder.Property(book => book.Price).HasPrecision(10, 2);
+            modelBuilder.Property(book => book.Description).HasMaxLength(500).IsRequired(false);
 
-            modelBuilder.HasOne(u => u.Publisher).WithMany(u => u.Books).HasForeignKey(u => u.PublisherId);
-            modelBuilder.HasOne(u => u.Category).WithMany(u => u.Books).HasForeignKey(u => u.CategoryId);
-            modelBuilder.HasMany(u => u.Authors).WithMany(u => u.Books);
+            modelBuilder.HasOne(book => book.Publisher).WithMany(publisher => publisher.Books).HasForeignKey(book => book.PublisherId);
+            modelBuilder.HasOne(book => book.Category).WithMany(category => category.Books).HasForeignKey(book => book.CategoryId);
+            modelBuilder.HasMany(book => book.Authors).WithMany(author => author.Books);
                 
         }
     }

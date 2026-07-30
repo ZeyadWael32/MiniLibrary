@@ -8,7 +8,8 @@ namespace MiniLibrary.DataAccess.FluentConfig
     {
         public void Configure(EntityTypeBuilder<Publisher> modelBuilder)
         {
-            modelBuilder.Property(u => u.Name).HasMaxLength(100).IsRequired();
+            modelBuilder.Property(publisher => publisher.Name).HasMaxLength(100).IsRequired();
+            modelBuilder.Property(publisher => publisher.Address).HasMaxLength(200).IsRequired(false);
         }
     }
 }
