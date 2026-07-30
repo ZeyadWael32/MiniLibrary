@@ -15,8 +15,18 @@ namespace MiniLibrary.DataAccess.FluentConfig
 
             modelBuilder.HasOne(book => book.Publisher).WithMany(publisher => publisher.Books).HasForeignKey(book => book.PublisherId);
             modelBuilder.HasOne(book => book.Category).WithMany(category => category.Books).HasForeignKey(book => book.CategoryId);
-            modelBuilder.HasMany(book => book.Authors).WithMany(author => author.Books);
-                
+            modelBuilder.HasMany(book => book.Authors).WithMany(author => author.Books)
+                .UsingEntity(join => join
+                .HasData(
+                    new { BooksId = 1, AuthorsId = 1 },
+                    new { BooksId = 2, AuthorsId = 2 },
+                    new { BooksId = 3, AuthorsId = 3 },
+                    new { BooksId = 4, AuthorsId = 4 },
+                    new { BooksId = 5, AuthorsId = 5 },
+                    new { BooksId = 6, AuthorsId = 1 },
+                    new { BooksId = 7, AuthorsId = 2 },
+                    new { BooksId = 8, AuthorsId = 3 }
+                ));     
         }
     }
 }
