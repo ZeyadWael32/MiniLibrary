@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MiniLibrary.DataAccess/MiniLibrary.DataAccess.csproj" />
+  <Project Path="MiniLibrary.Models/MiniLibrary.Models.csproj" />
+  <Project Path="MiniLibrary.Web/MiniLibrary.Web.csproj" />
+</Solution>

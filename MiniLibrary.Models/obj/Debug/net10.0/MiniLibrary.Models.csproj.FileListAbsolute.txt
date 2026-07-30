@@ -1,0 +1,11 @@
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\bin\Debug\net10.0\MiniLibrary.Models.deps.json
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\bin\Debug\net10.0\MiniLibrary.Models.dll
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\bin\Debug\net10.0\MiniLibrary.Models.pdb
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.AssemblyInfoInputs.cache
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.AssemblyInfo.cs
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.csproj.CoreCompileInputs.cache
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.dll
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\refint\MiniLibrary.Models.dll
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\MiniLibrary.Models.pdb
+D:\.NET Projects\MiniLibrary\MiniLibrary.Models\obj\Debug\net10.0\ref\MiniLibrary.Models.dll
