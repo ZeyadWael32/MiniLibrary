@@ -13,48 +13,54 @@ namespace MiniLibrary.DataAccess.Queries
             _context = context;
         }
 
-        public List<Book> GetAllBooks()
+        public async Task<List<Book>> GetAllBooks()
         {
-            return _context.Books
+            return await _context.Books
             .OrderBy(book => book.Title)
-            .ToList();
+            .AsNoTracking()
+            .ToListAsync();
         }
 
-        public List<Book> GetBooksWithAuthors()
+        public async Task<List<Book>> GetBooksWithAuthors()
         {
-            return _context.Books
+            return await _context.Books
                 .Include(book => book.Authors)
-                .ToList();
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public List<Book> GetBooksByCategory(int categoryId)
+        public async Task<List<Book>> GetBooksByCategory(int categoryId)
         {
-            return _context.Books
+            return await _context.Books
                 .Where(book => book.CategoryId == categoryId)
-                .ToList();
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public List<Book> GetBooksByAuthor(int authorId)
+        public async Task<List<Book>> GetBooksByAuthor(int authorId)
         {
-            return _context.Books
+            return await _context.Books
                 .Where(book => book.Authors.Any(author => author.Id == authorId))
-                .ToList();
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public List<Book> SearchBooks(string searchTerm)
+        public async Task<List<Book>> SearchBooks(string searchTerm)
         {
-            return _context.Books
+            return await _context.Books
                 .Where(book => book.Title.Contains(searchTerm) || book.ISBN.Contains(searchTerm))
-                .ToList();
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public Book? GetBookDetails(int bookId)
+        public async Task<Book?> GetBookDetails(int bookId)
         {
-            return _context.Books
+            return await _context.Books
                 .Include(book => book.Category)
                 .Include(book => book.Publisher)
                 .Include(book => book.Authors)
-                .SingleOrDefault(book => book.Id == bookId);
+                .AsNoTracking()
+                .SingleOrDefaultAsync(book => book.Id == bookId);
         }
     }
 }
