@@ -62,5 +62,16 @@ namespace MiniLibrary.DataAccess.Queries
                 .AsNoTracking()
                 .SingleOrDefaultAsync(book => book.Id == bookId);
         }
+        
+        // public async Task TestSearchBooks()
+        // {
+        //     var searchTerm = "book";
+        //     var books = await SearchBooks(searchTerm);
+
+        //     foreach (var book in books)
+        //     {
+        //         Console.WriteLine($"Title: {book.Title}, ISBN: {book.ISBN}");
+        //     }
+        // }
     }
 }
