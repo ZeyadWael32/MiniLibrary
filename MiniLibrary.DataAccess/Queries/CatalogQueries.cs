@@ -16,6 +16,9 @@ namespace MiniLibrary.DataAccess.Queries
         public async Task<List<Book>> GetAllBooks()
         {
             return await _context.Books
+            .Include(book => book.Category)
+            .Include(book => book.Publisher)
+            .Include(book => book.Authors)
             .OrderBy(book => book.Title)
             .AsNoTracking()
             .ToListAsync();
